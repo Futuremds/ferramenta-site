@@ -101,7 +101,7 @@ function editarPágina(filePath, args, folder) {
     console.log(anal)
     const rolagrossona = $.html()
     const emailedit = rolagrossona.replace(/E-mail:(.*?).com/g, `E-mail: ${args.get('email').split('.')[0]}.com`)
-    const numberedit = emailedit.replace(/(\()(\d{2})(\))( )(\d{5})(-)(\d{4})/g, `${edits['#telefone'].replace(/(\d{2})(\d{5})(\d{4})/, `($1) $2-$3`)}`)
+    const numberedit = emailedit.replace(/(\()(\d{2})(\))( )(\d+)(-)(\d{4})/g, `${edits['#telefone'].replace(/(\d{2})(\d{5})(\d{4})/, `($1) $2-$3`)}`)
     const novapagina = numberedit.replace(/(wa.me\/).*?(\?text)/, `$1${edits['#telefone']}$2`)
     const nou = cheerio.load(novapagina)
     nou('.elementor-spacer-inner').attr('style', 'height: 150px')
@@ -121,8 +121,8 @@ ipcMain.handle('editar-página', async (event, args) => {
   console.log('Script Node.js executado com os argumentos:', args);
 
   // Aqui você pode rodar qualquer código Node.js
-  const nameFolder = args.get('titulo').toLowerCase().replaceAll(' ', '-')
-  const modifiedHtml = editarPágina(filePath, args, nameFolder)
+  const foldername = args.get('titulo').toLowerCase().replaceAll(' ', '-')
+  const modifiedHtml = editarPágina(filePath, args, foldername)
   fs.writeFileSync('./deployment/index.html', modifiedHtml)
   const ignoreList = ['node_modules', 'cu.js', 'main.js', 'interface.html', 'outcu.txt', 'package.json', 'package-lock.json', 'penes.html', 'backup.html', 'preload.js', 'scriptanal.js']
   fs.writeFileSync('.gitignore', ignoreList.join('\n'))
