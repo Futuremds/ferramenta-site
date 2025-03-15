@@ -1,6 +1,7 @@
 # Configuração Inicial
 
 Instale o node por este link: https://nodejs.org/en/download/
+Instale o git por este link: https://git-scm.com/downloads/win
 Crie uma pasta onde preferir
 abra o cmd
 digite o comando: cd <diretorio da pasta criada>
