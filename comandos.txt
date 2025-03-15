@@ -1,4 +1,19 @@
+# Configuração Inicial
+
+Instale o node por este link: https://nodejs.org/en/download/
+Crie uma pasta onde preferir
+abra o cmd
+digite o comando: cd <diretorio da pasta criada>
+
+Digite os seguintes comandos:
 1 - git init
 2 - git clone https://github.com/Futuremds/ferramenta-site.git
 3 - npm install
 3 - npm start
+
+# Uso diário
+
+Entre na pasta, abra o cmd e digite o comando cd <diretorio da pasta>
+digite o comando npm start
+
+
